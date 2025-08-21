@@ -415,29 +415,80 @@ class WebsiteTranslator {
         const rows = table.querySelectorAll('tr');
         if (rows.length === 0) return '';
         
-        const result = [];
-        
         // Extract headers
         const headerRow = rows[0];
         const headers = Array.from(headerRow.querySelectorAll('th, td')).map(cell => 
-            this.cleanText(this.extractCellContent(cell))
+            this.cleanText(this.extractCellContent(cell)) || ''
         );
         
         if (headers.length === 0) return '';
         
-        result.push('| ' + headers.join(' | ') + ' |');
-        result.push('| ' + headers.map(() => '--------').join(' | ') + ' |');
-        
-        // Extract data rows
-        for (let i = 1; i < rows.length && i < 10; i++) { // Limit to 10 rows
-            const cells = Array.from(rows[i].querySelectorAll('td, th')).map(cell => 
-                this.cleanText(this.extractCellContent(cell))
-            );
+        // Extract all data rows first to calculate optimal column widths
+        const dataRows = [];
+        for (let i = 1; i < rows.length && i < 15; i++) {
+            const cells = Array.from(rows[i].querySelectorAll('td, th')).map(cell => {
+                const content = this.cleanText(this.extractCellContent(cell));
+                return content || '';
+            });
             
-            if (cells.length > 0) {
-                result.push('| ' + cells.join(' | ') + ' |');
+            // Pad cells array to match header length
+            while (cells.length < headers.length) {
+                cells.push('');
+            }
+            
+            // Only add non-empty rows or rows with at least one non-empty cell
+            if (cells.some(cell => cell.trim() !== '')) {
+                dataRows.push(cells);
             }
         }
+        
+        // Filter out rows that are completely empty or have very little content
+        const filteredDataRows = dataRows.filter(row => 
+            row.some(cell => cell.trim().length > 0)
+        );
+        
+        // Calculate optimal column widths
+        const columnWidths = headers.map((header, index) => {
+            let maxWidth = header.length;
+            filteredDataRows.forEach(row => {
+                if (row[index] && row[index].length > maxWidth) {
+                    maxWidth = row[index].length;
+                }
+            });
+            return Math.max(maxWidth, 8); // Minimum width of 8
+        });
+        
+        return this.formatASCIITable(headers, filteredDataRows, columnWidths);
+    }
+    
+    formatASCIITable(headers, dataRows, columnWidths) {
+        const result = [];
+        
+        // Create top border using standard ASCII characters
+        const topBorder = '+' + columnWidths.map(width => '-'.repeat(width + 2)).join('+') + '+';
+        result.push(topBorder);
+        
+        // Create header row
+        const headerCells = headers.map((header, index) => 
+            ' ' + header.padEnd(columnWidths[index]) + ' '
+        );
+        result.push('|' + headerCells.join('|') + '|');
+        
+        // Create separator row
+        const separator = '+' + columnWidths.map(width => '-'.repeat(width + 2)).join('+') + '+';
+        result.push(separator);
+        
+        // Create data rows
+        dataRows.forEach(row => {
+            const rowCells = row.map((cell, index) => 
+                ' ' + (cell || '').padEnd(columnWidths[index]) + ' '
+            );
+            result.push('|' + rowCells.join('|') + '|');
+        });
+        
+        // Create bottom border
+        const bottomBorder = '+' + columnWidths.map(width => '-'.repeat(width + 2)).join('+') + '+';
+        result.push(bottomBorder);
         
         return result.join('\n');
     }
@@ -458,24 +509,43 @@ class WebsiteTranslator {
             });
         }
         
-        // Check for links
+        // Check for links - preserve as markdown links in tables
         const links = cell.querySelectorAll('a');
         if (links.length > 0) {
+            let linkContent = '';
             links.forEach(link => {
                 const linkText = this.cleanText(link.textContent);
-                if (linkText) {
-                    content += linkText + ' ';
+                const href = link.href;
+                if (linkText && href) {
+                    linkContent += `[${linkText}](${href}) `;
+                } else if (linkText) {
+                    linkContent += linkText + ' ';
                 }
             });
+            content += linkContent;
         }
         
-        // Get the main text content
-        const mainText = cell.textContent.trim();
-        if (mainText) {
+        // Get the main text content, but avoid duplicating link text
+        let mainText = cell.textContent.trim();
+        
+        // Remove link text that we've already processed to avoid duplication
+        links.forEach(link => {
+            const linkText = link.textContent.trim();
+            if (linkText) {
+                // Remove the link text from the main text to avoid duplication
+                mainText = mainText.replace(linkText, '').trim();
+            }
+        });
+        
+        // Only add main text if we haven't already captured the content via links
+        if (mainText && links.length === 0) {
             content += mainText;
+        } else if (mainText && !content.includes(mainText)) {
+            content += ' ' + mainText;
         }
         
-        return content.trim();
+        // Clean up extra spaces and return
+        return this.cleanText(content);
     }
 
     getIconDescription(icon) {
@@ -558,19 +628,25 @@ class WebsiteTranslator {
         const labels = chartContainer.querySelectorAll('[class*="tag"], [class*="label"], [class*="title"]');
         
         if (numbers.length > 0 && labels.length > 0) {
-            // Create a simple table from chart data
-            const table = ['| Metric | Value |', '| ------ | ----- |'];
+            const headers = ['Metric', 'Value'];
+            const dataRows = [];
             
             for (let i = 0; i < Math.min(numbers.length, labels.length); i++) {
                 const number = this.cleanText(numbers[i].textContent);
                 const label = this.cleanText(labels[i].textContent);
                 if (number && label) {
-                    table.push(`| ${label} | ${number} |`);
+                    dataRows.push([label, number]);
                 }
             }
             
-            if (table.length > 2) { // Has at least header + data
-                return table.join('\n');
+            if (dataRows.length > 0) {
+                // Calculate column widths
+                const columnWidths = [
+                    Math.max(headers[0].length, Math.max(...dataRows.map(row => row[0].length)), 8),
+                    Math.max(headers[1].length, Math.max(...dataRows.map(row => row[1].length)), 8)
+                ];
+                
+                return this.formatASCIITable(headers, dataRows, columnWidths);
             }
         }
         
@@ -587,19 +663,25 @@ class WebsiteTranslator {
         const labels = chartContainer.querySelectorAll('[class*="tag"], [class*="label"], [class*="title"], [class*="name"]');
         
         if (percentages.length > 0 && labels.length > 0) {
-            // Create a table from percentage data
-            const table = ['| Metric | Percentage |', '| ------ | ---------- |'];
+            const headers = ['Metric', 'Percentage'];
+            const dataRows = [];
             
             for (let i = 0; i < Math.min(percentages.length, labels.length); i++) {
                 const percentage = this.cleanText(percentages[i].textContent);
                 const label = this.cleanText(labels[i].textContent);
                 if (percentage && label) {
-                    table.push(`| ${label} | ${percentage} |`);
+                    dataRows.push([label, percentage]);
                 }
             }
             
-            if (table.length > 2) { // Has at least header + data
-                return table.join('\n');
+            if (dataRows.length > 0) {
+                // Calculate column widths
+                const columnWidths = [
+                    Math.max(headers[0].length, Math.max(...dataRows.map(row => row[0].length)), 8),
+                    Math.max(headers[1].length, Math.max(...dataRows.map(row => row[1].length)), 8)
+                ];
+                
+                return this.formatASCIITable(headers, dataRows, columnWidths);
             }
         }
         
@@ -629,8 +711,8 @@ class WebsiteTranslator {
         
         if (rows.length < 2) return null; // Need at least header + data
         
-        const tableData = [];
         let headers = [];
+        const dataRows = [];
         
         // Try to extract headers from first row
         const firstRow = rows[0];
@@ -642,9 +724,6 @@ class WebsiteTranslator {
             );
             
             if (headers.length > 0) {
-                tableData.push('| ' + headers.join(' | ') + ' |');
-                tableData.push('| ' + headers.map(() => '--------').join(' | ') + ' |');
-                
                 // Extract data rows
                 for (let i = 1; i < rows.length && i < 10; i++) { // Limit to 10 rows
                     const cells = Array.from(rows[i].querySelectorAll('td, th, div, span, p')).map(cell => 
@@ -652,11 +731,28 @@ class WebsiteTranslator {
                     );
                     
                     if (cells.length > 0) {
-                        tableData.push('| ' + cells.join(' | ') + ' |');
+                        // Pad cells to match header length
+                        while (cells.length < headers.length) {
+                            cells.push('');
+                        }
+                        dataRows.push(cells);
                     }
                 }
                 
-                return tableData.join('\n');
+                if (dataRows.length > 0) {
+                    // Calculate column widths
+                    const columnWidths = headers.map((header, index) => {
+                        let maxWidth = header.length;
+                        dataRows.forEach(row => {
+                            if (row[index] && row[index].length > maxWidth) {
+                                maxWidth = row[index].length;
+                            }
+                        });
+                        return Math.max(maxWidth, 8);
+                    });
+                    
+                    return this.formatASCIITable(headers, dataRows, columnWidths);
+                }
             }
         }
         
@@ -738,8 +834,9 @@ class WebsiteTranslator {
         return text
             .trim()
             .replace(/\s+/g, ' ')
-            .replace(/[^\w\s\-.,!?()|]/g, '')  // Added | to preserve pipe characters for tables
-            .replace(/\n+/g, '\n');
+            .replace(/[^\w\s\-.,!?()|@+%/:\[\]()]/g, '')  // Preserve more characters for table content
+            .replace(/\n+/g, ' ')
+            .replace(/\s+/g, ' '); // Final cleanup of multiple spaces
     }
 
     shouldSkipLink(element) {
