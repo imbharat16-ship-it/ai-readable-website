@@ -32,6 +32,17 @@ body {
     color: #ffffff;
 }
 
+.version {
+    font-size: 12px;
+    color: #4CAF50;
+    font-weight: 600;
+    margin-bottom: 8px;
+    background: rgba(76, 175, 80, 0.1);
+    padding: 4px 12px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
 .subtitle {
     font-size: 12px;
     color: #888888;
@@ -188,6 +199,14 @@ body {
 .footer p {
     font-size: 10px;
     color: #666666;
+    margin-bottom: 5px;
+}
+
+.debug-info {
+    font-size: 9px !important;
+    color: #888888 !important;
+    font-style: italic;
+    margin-top: 8px !important;
 }
 
 /* Animation for toggle */

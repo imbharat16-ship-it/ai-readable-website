@@ -1,15 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "AI-Readable Website",
-  "version": "1.0.0",
-  "description": "Transform any website into a clean, AI-readable format",
+  "name": "AI-Readable Website v2.0",
+  "version": "2.0.0",
+  "description": "Transform any website into a clean, AI-readable format with intelligent table deduplication and enhanced readability",
   "permissions": [
     "activeTab",
     "storage"
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "AI-Readable Website"
+    "default_title": "AI-Readable Website v2.0"
   },
   "content_scripts": [
     {

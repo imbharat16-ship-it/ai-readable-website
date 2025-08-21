@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page for AI-Readable Extension</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .table-container { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+        .benchmark-table { margin: 20px 0; }
+        .chart-data { display: flex; justify-content: space-between; margin: 10px 0; }
+        .metric { text-align: center; }
+        .percentage { font-size: 24px; font-weight: bold; color: #4CAF50; }
+    </style>
+</head>
+<body>
+    <h1>AI Performance Benchmarks</h1>
+    
+    <div class="table-container">
+        <h2>Browsecomp (LP) Benchmark</h2>
+        <p>This benchmark measures AI model performance across different categories.</p>
+        
+        <!-- This will be detected as a table by Strategy 2 (HTML table) -->
+        <table class="benchmark-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Accuracy (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Ultra8x</td><td>58</td></tr>
+                <tr><td>Ultra</td><td>45</td></tr>
+                <tr><td>Pro</td><td>34</td></tr>
+                <tr><td>GPT-5</td><td>41</td></tr>
+                <tr><td>Exa</td><td>14</td></tr>
+                <tr><td>Anthropic</td><td>7</td></tr>
+                <tr><td>Perplexity</td><td>6</td></tr>
+            </tbody>
+        </table>
+        
+        <!-- This will be detected as a table by Strategy 1 (pre-formatted) -->
+        <pre>
+Category    | Accuracy (%)
+------------|-------------
+Ultra8x     | 58
+Ultra       | 45
+Pro         | 34
+GPT-5       | 41
+Exa         | 14
+Anthropic   | 7
+Perplexity  | 6
+        </pre>
+        
+        <!-- This will be detected as a table by Strategy 4 (custom div structure) -->
+        <div class="chart-data">
+            <div class="metric">
+                <div class="percentage">58%</div>
+                <div>Ultra8x</div>
+            </div>
+            <div class="metric">
+                <div class="percentage">45%</div>
+                <div>Ultra</div>
+            </div>
+            <div class="metric">
+                <div class="percentage">34%</div>
+                <div>Pro</div>
+            </div>
+            <div class="metric">
+                <div class="percentage">41%</div>
+                <div>GPT-5</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="table-container">
+        <h2>DeepResearch Bench (LP)</h2>
+        <p>This benchmark contains 100 expert-level research tasks designed by domain specialists across 22 fields.</p>
+        
+        <!-- Another table that should be deduplicated -->
+        <table class="benchmark-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Win Rate (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Ultra8x</td><td>82</td></tr>
+                <tr><td>Ultra</td><td>74</td></tr>
+                <tr><td>GPT-5</td><td>66</td></tr>
+            </tbody>
+        </table>
+        
+        <!-- Pre-formatted version of the same data -->
+        <pre>
+Category | Win Rate (%)
+---------|-------------
+Ultra8x  | 82
+Ultra    | 74
+GPT-5    | 66
+        </pre>
+    </div>
+    
+    <div class="table-container">
+        <h3>About the benchmark</h3>
+        <p>This benchmark contains 100 expert-level research tasks designed by domain specialists across 22 fields, primarily Science Technology, Business Finance, and Software Development. It evaluates AI systems ability to produce rigorous, long-form research reports on complex topics requiring cross-disciplinary synthesis.</p>
+        
+        <h3>Methodology</h3>
+        <p>Results are reported from the subset of 50 English-language tasks in the benchmark. Learn more in our blog.</p>
+    </div>
+    
+    <footer>
+        <p>Terms | Privacy | Trust Center</p>
+    </footer>
+</body>
+</html>
