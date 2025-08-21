@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Readable Website</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI-Readable Website</h1>
+            <p class="subtitle">Transform any website into machine-readable format</p>
+        </div>
+        
+        <div class="toggle-section">
+            <div class="toggle-container">
+                <label class="toggle-label">
+                    <span class="toggle-text">AI Mode</span>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="aiModeToggle" class="toggle-input">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div class="status-section">
+            <div class="status-indicator" id="statusIndicator">
+                <span class="status-dot"></span>
+                <span class="status-text" id="statusText">AI Mode: Off</span>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-card">
+                <h3>How it works:</h3>
+                <ul>
+                    <li>Toggle AI Mode to transform the current page</li>
+                    <li>View content in clean, markdown format</li>
+                    <li>Optimized for AI consumption</li>
+                    <li>Toggle back to see original website</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Based on translation logic from Parallel.ai</p>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

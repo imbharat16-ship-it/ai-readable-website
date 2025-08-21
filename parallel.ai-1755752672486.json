@@ -1,0 +1,318 @@
+{
+  "forms": [],
+  "generatedAt": "2025-08-21T05:04:32.484Z",
+  "headings": {
+    "h1": [
+      "# AIs are the web's new user"
+    ],
+    "h2": [
+      "## A web API purpose-built for AIs",
+      "Highest accuracy at every price point",
+      "## Highest accuracy at every price point",
+      "### Browsecomp (LP)",
+      "### DeepResearch Bench (LP)",
+      "### Search MCP Benchmark (LP)",
+      "### WISER-Atomic",
+      "### SimpleQA",
+      "## The most accurate deep and wide research",
+      "## Build a dataset from the web",
+      "## Search, built for AIs",
+      "## Custom web enrichment",
+      "## Towards a programmatic web for AIs"
+    ],
+    "h3": [
+      "### About the benchmark",
+      "### Methodology",
+      "### About the benchmark",
+      "### Methodology",
+      "### About the benchmark",
+      "### Methodology",
+      "### About the benchmark",
+      "### Distribution",
+      "### Evaluation",
+      "### About the benchmark",
+      "### Steps of reasoning",
+      "### Distribution",
+      "### About the benchmark",
+      "### Steps of reasoning",
+      "### Distribution",
+      "Contact",
+      "Resources",
+      "Info"
+    ],
+    "h4": [],
+    "h5": [],
+    "h6": []
+  },
+  "images": [
+    {
+      "alt": "API interface screenshot showing search query input and structured data output",
+      "src": "https://parallel.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F5hzduz3y%2Fproduction%2F884549a6d3f5da8419ef5be6c0013d17c1d722bf-1586x580.png&w=3840&q=75"
+    }
+  ],
+  "links": [
+    {
+      "href": "https://parallel.ai/",
+      "text": "Parallel"
+    },
+    {
+      "href": "https://parallel.ai/about",
+      "text": "About"
+    },
+    {
+      "href": "https://parallel.ai/pricing",
+      "text": "Pricing"
+    },
+    {
+      "href": "https://jobs.ashbyhq.com/parallel",
+      "text": "Careers"
+    },
+    {
+      "href": "https://parallel.ai/blog",
+      "text": "Blog"
+    },
+    {
+      "href": "https://docs.parallel.ai/home",
+      "text": "Docs"
+    },
+    {
+      "href": "https://parallel.ai/blog/introducing-parallel",
+      "text": "58%45%34%41%14%7%6%Human(25%)0%5%10%15%20%25%30%35%40%45%50%55%60%Ultra8xUltraProGPT-5ExaAnthropicPerplexityModel Accuracy  (%)"
+    },
+    {
+      "href": "https://openai.com/index/browsecomp/",
+      "text": "benchmark"
+    },
+    {
+      "href": "https://parallel.ai/blog/introducing-parallel",
+      "text": "blog"
+    },
+    {
+      "href": "https://openai.com/index/browsecomp/",
+      "text": "benchmark"
+    },
+    {
+      "href": "https://parallel.ai/blog/introducing-parallel",
+      "text": "blog"
+    },
+    {
+      "href": "https://github.com/Ayanami0730/deep_research_bench",
+      "text": "benchmark"
+    },
+    {
+      "href": "https://parallel.ai/blog/introducing-parallel",
+      "text": "blog"
+    },
+    {
+      "href": "https://github.com/Ayanami0730/deep_research_bench",
+      "text": "RACE"
+    },
+    {
+      "href": "https://parallel.ai/blog/search-api-benchmark",
+      "text": "here"
+    },
+    {
+      "href": "https://parallel.ai/blog/parallel-task-api",
+      "text": "here"
+    },
+    {
+      "href": "https://platform.parallel.ai/play/deep-research",
+      "text": "Run a query"
+    },
+    {
+      "href": "https://platform.parallel.ai/find-all",
+      "text": "Create a dataset"
+    },
+    {
+      "href": "https://platform.parallel.ai/play/search",
+      "text": "Give AIs Search"
+    },
+    {
+      "href": "https://platform.parallel.ai/play",
+      "text": "Enrich your data"
+    },
+    {
+      "href": "https://platform.parallel.ai/",
+      "text": "Try it for freeP"
+    },
+    {
+      "href": "https://jobs.ashbyhq.com/parallel",
+      "text": "Join us C"
+    },
+    {
+      "href": "https://docs.parallel.ai/home",
+      "text": ""
+    },
+    {
+      "href": "https://parallel.ai/blog/introducing-parallel",
+      "text": "[Introducing Parallel: Web Search Infrastructure for AIs ](https://parallel.ai/blog/introducing-parallel)The Parallel Deep Research API outperforms humans and all leading AI models"
+    },
+    {
+      "href": "https://parallel.ai/blog/sse-for-tasks",
+      "text": "[Introducing SSE for Task Runs](https://parallel.ai/blog/sse-for-tasks)Stream live events for every Task run"
+    },
+    {
+      "href": "https://parallel.ai/blog/new-advanced-processors",
+      "text": "[A new line of advanced processors: Ultra2x, Ultra4x, and Ultra8x ](https://parallel.ai/blog/new-advanced-processors)Our newest deep research processors"
+    },
+    {
+      "href": "mailto:hello@parallel.ai",
+      "text": "hello@parallel.ai"
+    },
+    {
+      "href": "https://parallel.ai/about",
+      "text": "About"
+    },
+    {
+      "href": "https://parallel.ai/pricing",
+      "text": "Pricing"
+    },
+    {
+      "href": "https://docs.parallel.ai/",
+      "text": "Docs"
+    },
+    {
+      "href": "https://parallel.ai/blog",
+      "text": "Blog"
+    },
+    {
+      "href": "https://docs.parallel.ai/resources/changelog",
+      "text": "Changelog"
+    },
+    {
+      "href": "https://jobs.ashbyhq.com/parallel",
+      "text": "Careers"
+    },
+    {
+      "href": "https://parallel.ai/terms-of-service",
+      "text": "Terms"
+    },
+    {
+      "href": "https://parallel.ai/privacy-policy",
+      "text": "Privacy"
+    },
+    {
+      "href": "https://trust.parallel.ai/",
+      "text": "Trust Center"
+    },
+    {
+      "href": "https://www.linkedin.com/company/parallel-web/about/",
+      "text": "LinkedIn"
+    },
+    {
+      "href": "https://x.com/p0",
+      "text": "Twitter"
+    }
+  ],
+  "lists": {
+    "ol": [],
+    "ul": [
+      [
+        "- Dates: All measurements were made between 08/08/2025 and 08/13/2025.",
+        "- Configurations: For all competitors, we report the highest numbers we were able to achieve across multiple configurations of their APIs. The exact configurations are below. - GPT-5: high reasoning, high search context, default verbosity- Exa: Exa Research Pro- Anthropic: Claude Opus 4.1- Perplexity: Sonar Deep Research reasoning effort high"
+      ],
+      [
+        "- GPT-5: high reasoning, high search context, default verbosity",
+        "- Exa: Exa Research Pro",
+        "- Anthropic: Claude Opus 4.1",
+        "- Perplexity: Sonar Deep Research reasoning effort high"
+      ],
+      [
+        "- Dates: All measurements were made between 08/08/2025 and 08/13/2025.",
+        "- Configurations: For all competitors, we report the highest numbers we were able to achieve across multiple configurations of their APIs. The exact configurations are below. - GPT-5: high reasoning, high search context, default verbosity- Exa: Exa Research Pro- Anthropic: Claude Opus 4.1- Perplexity: Sonar Deep Research reasoning effort high"
+      ],
+      [
+        "- GPT-5: high reasoning, high search context, default verbosity",
+        "- Exa: Exa Research Pro",
+        "- Anthropic: Claude Opus 4.1",
+        "- Perplexity: Sonar Deep Research reasoning effort high"
+      ],
+      [
+        "- Dates: All measurements were made between 08/08/2025 and 08/13/2025.",
+        "- Win Rate: Calculated by comparing RACE[RACE]($https://github.com/Ayanami0730/deep_research_bench) scores in direct head-to-head evaluations.",
+        "- Configurations: For all competitors, we report results for the highest numbers we were able to achieve across multiple configurations of their APIs. The exact GPT-5 configuration is high reasoning, high search context, and high verbosity.",
+        "- Excluded API Results: Exa Research Pro (0% win rate), Claude Opus 4.1 (0% win rate), and Perplexity Sonar Deep Research (6% win rate)."
+      ],
+      [
+        "hello@parallel.ai[hello@parallel.ai](mailto:hello@parallel.ai)"
+      ],
+      [
+        "About[About](https://parallel.ai/about)",
+        "Pricing[Pricing](https://parallel.ai/pricing)",
+        "Docs[Docs](https://docs.parallel.ai)",
+        "Blog[Blog](https://parallel.ai/blog)",
+        "Changelog[Changelog](https://docs.parallel.ai/resources/changelog)",
+        "Careers[Careers](https://jobs.ashbyhq.com/parallel)"
+      ],
+      [
+        "Terms[Terms](https://parallel.ai/terms-of-service)",
+        "Privacy[Privacy](https://parallel.ai/privacy-policy)",
+        "Trust Center[Trust Center](https://trust.parallel.ai/)"
+      ]
+    ]
+  },
+  "meta": {
+    "description": "Enterprise deep research API with structured data extraction for AI agents. Up to 58% accuracy outperforming GPT-5 (41%), Exa (14%), Anthropic (7%), Perplexity (6%). SOC-II certified enterprise infrastructure with structured JSON responses for complex multi-hop queries. Built for enterprise deep research and AI agent workflows.",
+    "og:description": "Enterprise deep research API with structured data extraction for AI agents. Up to 58% accuracy outperforming GPT-5 (41%), Exa (14%), Anthropic (7%), Perplexity (6%). SOC-II certified enterprise infrastructure with structured JSON responses for complex multi-hop queries. Built for enterprise deep research and AI agent workflows.",
+    "og:image": "https://cdn.sanity.io/images/5hzduz3y/production/af2532f8be18702b2fe96d33758089b082405e73-4800x2520.jpg?w=1200&h=630&fit=crop",
+    "og:image:height": "630",
+    "og:image:width": "1200",
+    "og:site_name": "Parallel Web Systems | Enterprise Deep Research API",
+    "og:title": "Parallel Web Systems | Enterprise Deep Research API",
+    "robots": "index, follow",
+    "twitter:card": "summary_large_image",
+    "twitter:description": "Enterprise deep research API with structured data extraction for AI agents. Up to 58% accuracy outperforming GPT-5 (41%), Exa (14%), Anthropic (7%), Perplexity (6%). SOC-II certified enterprise infrastructure with structured JSON responses for complex multi-hop queries. Built for enterprise deep research and AI agent workflows.",
+    "twitter:image": "https://cdn.sanity.io/images/5hzduz3y/production/af2532f8be18702b2fe96d33758089b082405e73-4800x2520.jpg?w=1200&h=630&fit=crop",
+    "twitter:image:height": "630",
+    "twitter:image:width": "1200",
+    "twitter:site": "https://parallel.ai",
+    "twitter:title": "Parallel Web Systems | Enterprise Deep Research API",
+    "viewport": "width=device-width, initial-scale=1"
+  },
+  "paragraphs": [
+    "The highest accuracy web search for your AI",
+    "Powering millions of daily requests",
+    "### Highest accuracy",
+    "Production-ready outputs built on cross-referenced facts, with minimal hallucination.",
+    "### Predictable costs",
+    "Flex compute budget based on task complexity. Pay per query, not per token.",
+    "### Evidence-based outputs",
+    "Verifiability and provenance for every atomic output.",
+    "### Trusted",
+    "SOC-II Type 2 Certified, trusted by leading startups and enterprises.",
+    "State of the art across several benchmarks",
+    "This benchmark[benchmark]($https://openai.com/index/browsecomp/), created by OpenAI, contains 1,266 questions requiring multi-hop reasoning, creative search formulation, and synthesis of contextual clues across time periods. Results are reported on a random sample of 100 questions from this benchmark. Learn more in our blog[blog]($https://parallel.ai/blog/introducing-parallel).",
+    "State of the art across several benchmarks",
+    "This benchmark[benchmark]($https://openai.com/index/browsecomp/), created by OpenAI, contains 1,266 questions requiring multi-hop reasoning, creative search formulation, and synthesis of contextual clues across time periods. Results are reported on a random sample of 100 questions from this benchmark. Learn more in our blog[blog]($https://parallel.ai/blog/introducing-parallel).",
+    "This benchmark[benchmark]($https://github.com/Ayanami0730/deep_research_bench) contains 100 expert-level research tasks designed by domain specialists across 22 fields, primarily Science & Technology, Business & Finance, and Software Development. It evaluates AI systems' ability to produce rigorous, long-form research reports on complex topics requiring cross-disciplinary synthesis. Results are reported from the subset of 50 English-language tasks in the benchmark. Learn more in our blog[blog]($https://parallel.ai/blog/introducing-parallel).",
+    "CPM: USD per 1000 requests. Cost is shown on a Linear scale.",
+    "This benchmark, created by Parallel, blends WISER-Fresh and WISER-Atomic. WISER-Fresh is a set of 76 queries requiring the freshest data from the web, generated by Parallel with o3 pro. WISER-Atomic is a set of 120 hard real-world business queries, based on use cases from Parallel customers. Read our blog here[here]($https://parallel.ai/blog/search-api-benchmark).",
+    "40% WISER-Fresh60% WISER-Atomic",
+    "The Parallel Search API was evaluated by comparing three different web search solutions (Parallel MCP server, Exa MCP server/tool calling, LLM native web search) across four different LLMs (GPT 4.1, o4-mini, o3, Claude Sonnet 4).",
+    "CPM: USD per 1000 requests. Cost is shown on a Log scale.",
+    "This benchmark, created by Parallel, contains 121 questions intended to reflect real-world web research queries across a variety of domains. Read our blog here[here]($https://parallel.ai/blog/parallel-task-api).",
+    "50% Multi-Hop questions50% Single-Hop questions",
+    "40% Financial Research20% Sales Research20% Recruitment20% Miscellaneous",
+    "CPM: USD per 1000 requests. Cost is shown on a Log scale.",
+    "This benchmark contains 4,326 questions focused on short, fact-seeking queries across a variety of domains.",
+    "100% Single-Hop questions",
+    "36% Culture 20% Science and Technology 16% Politics 28% Miscellaneous",
+    "Run deeper and more accurate research at scale, for the same compute budget",
+    "Define your search criteria in natural language, and get back a structured table of matches",
+    "The most accurate search tool, to bring web context to your AI agents",
+    "Bring existing data, define output columns to research, and get fresh web enrichments back",
+    "Start building",
+    "Parallel is building new interfaces, infrastructure, and business models for AIs to work with the web",
+    "Latest updates",
+    "[Introducing Parallel: Web Search Infrastructure for AIs ](https://parallel.ai/blog/introducing-parallel)",
+    "The Parallel Deep Research API outperforms humans and all leading AI models",
+    "[Introducing SSE for Task Runs](https://parallel.ai/blog/sse-for-tasks)",
+    "Stream live events for every Task run",
+    "[A new line of advanced processors: Ultra2x, Ultra4x, and Ultra8x ](https://parallel.ai/blog/new-advanced-processors)",
+    "Our newest deep research processors",
+    "Parallel Web Systems Inc. 2025"
+  ],
+  "tables": [],
+  "title": "Parallel Web Systems | Enterprise Deep Research API",
+  "url": "https://parallel.ai/"
+}

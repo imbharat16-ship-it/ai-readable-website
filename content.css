@@ -1,0 +1,222 @@
+/* AI-Readable Website Styles */
+
+/* Roboto Mono Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.ai-readable-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+    font-family: 'Roboto Mono', monospace !important;
+    z-index: 999999 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.ai-header {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 1000000 !important;
+}
+
+.ai-toggle-indicator {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    background: rgba(42, 42, 42, 0.9) !important;
+    border: 1px solid #444444 !important;
+    border-radius: 20px !important;
+    padding: 8px 16px !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.human-label,
+.machine-label {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    padding: 4px 8px !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.human-label {
+    color: #666666 !important;
+    background: transparent !important;
+}
+
+.machine-label {
+    color: #666666 !important;
+    background: transparent !important;
+}
+
+.machine-label.active {
+    color: #ffffff !important;
+    background: #4CAF50 !important;
+}
+
+.ai-content {
+    width: 100% !important;
+    height: 100vh !important;
+    overflow-y: auto !important;
+    padding: 40px 20px 40px 20px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.ai-markdown {
+    font-family: 'Roboto Mono', monospace !important;
+    font-size: 10px !important;
+    line-height: 1.7 !important;
+    color: #ffffff !important;
+    background: transparent !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    max-width: 400px !important;
+    width: 100% !important;
+    border-left: 2px solid #333333 !important;
+    padding-left: 40px !important;
+    margin-left: 0 !important;
+    letter-spacing: 0.02em !important;
+}
+
+/* Custom scrollbar */
+.ai-content::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.ai-content::-webkit-scrollbar-track {
+    background: #2a2a2a !important;
+    border-radius: 4px !important;
+}
+
+.ai-content::-webkit-scrollbar-thumb {
+    background: #444444 !important;
+    border-radius: 4px !important;
+}
+
+.ai-content::-webkit-scrollbar-thumb:hover {
+    background: #555555 !important;
+}
+
+/* Hide all other elements when AI mode is active */
+body.ai-mode-active > *:not(.ai-readable-container) {
+    display: none !important;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .ai-content {
+        padding: 30px 10px 20px 10px !important;
+    }
+    
+    .ai-markdown {
+        font-size: 12px !important;
+        padding-left: 30px !important;
+        padding-right: 15px !important;
+        margin-left: 0 !important;
+        max-width: 350px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .ai-markdown {
+        max-width: 300px !important;
+        font-size: 11px !important;
+        padding-left: 25px !important;
+        padding-right: 10px !important;
+    }
+}
+
+/* Animation for smooth transitions */
+.ai-readable-container {
+    animation: fadeIn 0.3s ease-in-out !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0 !important;
+        transform: translateY(20px) !important;
+    }
+    to {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+}
+
+/* Ensure text selection works */
+.ai-markdown {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+}
+
+/* Style for links in the markdown */
+.ai-markdown a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.ai-markdown a:hover {
+    color: #cccccc !important;
+}
+
+/* Better typography for headings */
+.ai-markdown h1,
+.ai-markdown h2,
+.ai-markdown h3,
+.ai-markdown h4,
+.ai-markdown h5,
+.ai-markdown h6 {
+    margin-top: 1.5em !important;
+    margin-bottom: 0.5em !important;
+    font-weight: 600 !important;
+}
+
+/* Improve spacing between sections */
+.ai-markdown p {
+    margin-bottom: 1em !important;
+}
+
+/* Style for the brand name at the top */
+.ai-markdown .brand-name {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    margin-bottom: 1.5em !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* CTA highlighting like parallel.ai */
+.ai-markdown .cta-highlight {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 2px 6px !important;
+    border-radius: 3px !important;
+    font-weight: 500 !important;
+    display: inline-block !important;
+    margin: 2px 0 !important;
+}
+
+/* Override any existing styles that might interfere */
+.ai-readable-container * {
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.ai-readable-container .ai-content,
+.ai-readable-container .ai-markdown {
+    margin: 0 !important;
+    padding: inherit !important;
+}

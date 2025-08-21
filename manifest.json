@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "AI-Readable Website",
+  "version": "1.0.0",
+  "description": "Transform any website into a clean, AI-readable format",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI-Readable Website"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "JetBrains_Mono/*.ttf"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
