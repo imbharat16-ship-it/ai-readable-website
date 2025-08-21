@@ -1,192 +1,88 @@
-# AI-Readable Website Chrome Extension
+# AI Readable Website
 
-Transform any website into a clean, AI-readable format with intelligent table deduplication and enhanced readability.
+Transform any website into a clean, AI-parseable format. Made by Bharat & Ishika and inspired by Parallel.ai.
 
-## ✨ **New Features (v2.0)**
+## What It Does
 
-- **🎯 Smart Table Deduplication**: Marker-based system eliminates duplicate tables
-- **📏 Enhanced Spacing**: Professional typography with consistent section separation
-- **🏗️ Structured Sections**: Clear navigation, content, and footer organization
-- **📱 Responsive Design**: Optimized spacing for all device sizes
-- **🔍 Debug Logging**: Comprehensive console output for troubleshooting
+This Chrome extension takes any website and converts it into a clean, machine-readable format that's optimized for AI consumption. It intelligently handles tables, removes duplicates, and presents content in a structured way that's easy for AI models to process.
 
-## 🚀 **Key Improvements**
+## How It Works
 
-### **Table Deduplication System**
-- **No More Duplicates**: Each table appears exactly once in its logical position
-- **Smart Positioning**: Tables are placed where they belong in the content flow
-- **Multiple Formats Supported**: Pre-formatted, HTML, chart, and custom table structures
-- **Priority-Based Selection**: Chooses the best available format for each table
+### 1. Content Analysis
+The extension analyzes the current webpage and identifies:
+- Navigation elements and branding
+- Main content sections
+- Tables and data structures
+- Headings and text hierarchy
 
-### **Enhanced Readability**
-- **Professional Typography**: Increased font sizes, line heights, and letter spacing
-- **Consistent Spacing**: Hierarchical spacing system for headings and content
-- **Better Layout**: Increased content width (600px) with improved padding
-- **Section Organization**: Clear visual separation between navigation, content, and footer
+### 2. Smart Table Handling
+- **Deduplication**: Eliminates duplicate tables that often appear in multiple formats
+- **Format Selection**: Chooses the best available format (markdown, HTML, charts)
+- **Smart Positioning**: Places tables in their logical location within the content flow
 
-## 🎯 **How It Works**
+### 3. Content Transformation
+- **Clean Typography**: Professional spacing and font sizing
+- **Structured Layout**: Clear sections with consistent formatting
+- **AI-Optimized**: Content formatted specifically for AI model consumption
+- **Responsive Design**: Works across all device sizes
 
-### **Phase 1: Content Discovery with Markers**
-- Identifies DOM structure and content areas
-- Places markers where tables should appear
-- Classifies elements (brand, navigation, headlines, etc.)
+## Installation
 
-### **Phase 2: Table Extraction**
-- Extracts all tables using multiple strategies
-- Pre-formatted markdown (highest priority)
-- Standard HTML tables
-- Chart/visualization structures
-- Custom div structures
-
-### **Phase 3: Smart Table Replacement**
-- Replaces markers with appropriate table content
-- Matches tables to markers based on element, heading, and priority
-- Ensures each table appears only once in the optimal format
-
-### **Phase 4: Enhanced Presentation**
-- Professional dark theme with improved typography
-- Consistent spacing and section separation
-- Responsive design for all devices
-- Clean, distraction-free layout
-
-## 📁 **File Structure**
-
-```
-ai-readable-website-extension/
-├── manifest.json          # Extension configuration
-├── popup.html             # Extension popup interface
-├── popup.css              # Popup styling
-├── popup.js               # Popup functionality
-├── content.js             # Main translation logic with marker system
-├── content.css            # Enhanced AI mode styling
-├── test-page.html         # Test page for debugging
-└── README.md              # This file
-```
-
-## 🛠️ **Installation**
-
-1. Download or clone this extension folder
+1. Download this extension folder
 2. Open Chrome and go to `chrome://extensions/`
 3. Enable "Developer mode" in the top right
 4. Click "Load unpacked" and select the extension folder
 5. The extension icon will appear in your toolbar
 
-## 📖 **Usage**
+## Usage
 
-1. Visit any website (e.g., www.baseten.com)
-2. Click the "AI-Readable Website" extension icon
-3. Toggle "AI Mode" to ON
-4. The website will transform into machine-readable format
-5. Toggle back to OFF to return to the original website
+1. Visit any website you want to transform
+2. Click the "AI Readable Website" extension icon
+3. Click "Transform" to activate AI mode
+4. The page will instantly convert to a clean, AI-readable format
+5. Click "Transform" again to return to the original website
 
-## 🔧 **Debugging & Testing**
+## Key Features
 
-### **Console Logging**
-The extension provides comprehensive console output:
-- Table marker placement and replacement
-- Content extraction progress
-- Table deduplication results
-- Performance metrics
+- **One-Click Transformation**: Instant conversion with a single click
+- **Table Deduplication**: No more duplicate tables cluttering the content
+- **Clean Typography**: Professional spacing and readability
+- **Structured Content**: Clear sections and logical organization
+- **Privacy-First**: All processing happens locally in your browser
 
-### **Test Page**
-Use `test-page.html` to verify:
-- Table deduplication functionality
-- Spacing and typography improvements
-- Section organization
+## Supported Content
 
-## 🎨 **Design Features**
+- **Navigation**: Menus, branding, and site structure
+- **Text Content**: Articles, blog posts, documentation
+- **Tables**: Data tables, charts, and structured information
+- **Lists**: Bulleted and numbered lists
+- **Links**: Internal and external references
 
-### **Typography**
-- **Font**: Roboto Mono for optimal readability
-- **Sizes**: 11px base, 1.3em major headings, 1.1em minor headings
-- **Spacing**: 1.8 line height with 0.025em letter spacing
-
-### **Layout**
-- **Content Width**: 600px maximum for comfortable reading
-- **Padding**: 60px vertical, 40px horizontal (responsive)
-- **Borders**: 3px left border with 50px left padding
-
-### **Responsive Design**
-- **Desktop**: Full spacing and typography
-- **Tablet**: Balanced spacing with 500px content width
-- **Mobile**: Optimized spacing with 400px content width
-
-## 🔍 **Supported Elements**
-
-- **Navigation**: Brand name, menu links, CTAs
-- **Headings**: H1-H6 with proper markdown hierarchy and spacing
-- **Content**: Paragraphs, lists, and text blocks with improved margins
-- **Tables**: Multiple formats with intelligent deduplication
-- **Links**: Internal and external with proper formatting
-- **Footer**: Contact info and additional links
-
-## 🌐 **Browser Compatibility**
+## Browser Compatibility
 
 - Chrome 88+
 - Edge 88+
 - Other Chromium-based browsers
 
-## 🔒 **Privacy**
+## Privacy
 
 This extension:
-- Only processes content on the current tab when activated
-- Does not send data to external servers
-- Stores only the AI Mode toggle state locally
-- Does not track user behavior
+- Processes content only when you activate it
+- Works entirely in your browser (no data sent to servers)
+- Stores only your toggle preference locally
+- Doesn't track or collect any user data
 
-## 🐛 **Troubleshooting**
+## Technical Details
 
-### **Tables Still Appearing Twice?**
-1. Check the console for debug logs
-2. Verify table markers are being placed and replaced
-3. Ensure the extension is updated to the latest version
+The extension uses a marker-based system to intelligently place and deduplicate tables, ensuring each piece of content appears exactly once in its optimal format. It transforms the DOM structure while preserving all meaningful content and relationships.
 
-### **Spacing Issues?**
-1. Check if CSS is properly loaded
-2. Verify responsive breakpoints are working
-3. Test on different screen sizes
+## Troubleshooting
 
-### **Performance Issues?**
-1. Check console for extraction timing
-2. Verify table count in logs
-3. Test on simpler websites first
-
-## 🤝 **Contributing**
-
-To contribute to this extension:
-
-1. Fork the repository
-2. Make your changes
-3. Test thoroughly on various websites
-4. Submit a pull request
-
-## 📝 **Changelog**
-
-### **v2.0 - Major Update**
-- ✅ Implemented marker-based table deduplication
-- ✅ Enhanced typography and spacing
-- ✅ Added structured section organization
-- ✅ Improved responsive design
-- ✅ Added comprehensive debug logging
-
-### **v1.0 - Initial Release**
-- ✅ Basic website transformation
-- ✅ Table extraction and formatting
-- ✅ Dark theme UI
-- ✅ Popup interface
-
-## 📄 **License**
-
-This extension is based on the translation logic from Parallel.ai and is provided as-is for educational and development purposes.
-
-## 🆘 **Support**
-
-For issues or questions:
-1. Check the console logs for debugging information
-2. Test with the provided test page
-3. Review the troubleshooting section above
-4. Open an issue in the repository
+If you encounter issues:
+1. Check the browser console for debug information
+2. Try refreshing the page and activating the extension again
+3. Test on different websites to isolate the issue
 
 ---
 
-**Transform any website into clean, readable content with intelligent table handling and professional typography! 🚀**
+**Transform any website into clean, AI-parseable content with intelligent table handling! 🚀**

@@ -5,215 +5,147 @@
 }
 
 body {
-    width: 400px;
-    height: 600px;
-    font-family: 'Roboto Mono', monospace;
-    background: #1a1a1a;
-    color: #ffffff;
-    overflow-x: hidden;
+    width: 280px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background: #ffffff;
+    color: #333333;
+    overflow: hidden;
 }
 
 .container {
-    padding: 20px;
-    height: 100%;
+    padding: 24px;
     display: flex;
     flex-direction: column;
+    gap: 24px;
 }
 
 .header {
-    text-align: center;
-    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .header h1 {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 500;
+    color: #999999;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     margin-bottom: 8px;
-    color: #ffffff;
-}
-
-.version {
-    font-size: 12px;
-    color: #4CAF50;
-    font-weight: 600;
-    margin-bottom: 8px;
-    background: rgba(76, 175, 80, 0.1);
-    padding: 4px 12px;
-    border-radius: 12px;
-    display: inline-block;
 }
 
 .subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.attribution {
     font-size: 12px;
-    color: #888888;
+    font-weight: 400;
+    color: #666666;
     line-height: 1.4;
 }
 
 .toggle-section {
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 .toggle-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
 }
 
 .toggle-label {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    display: block;
     cursor: pointer;
+    width: 100%;
 }
 
 .toggle-text {
-    font-size: 16px;
-    font-weight: 500;
-    color: #ffffff;
+    display: none; /* Hide the text since it's integrated into the button */
 }
 
 .toggle-switch {
     position: relative;
-    width: 60px;
-    height: 30px;
+    width: 100%;
+    height: 44px;
+    background: #007AFF;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.toggle-switch:hover {
+    background: #0051D0;
+}
+
+.toggle-switch::after {
+    content: "Transform ↗";
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .toggle-input {
+    position: absolute;
     opacity: 0;
-    width: 0;
-    height: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.toggle-input:checked + .toggle-switch {
+    background: #34C759;
+}
+
+.toggle-input:checked + .toggle-switch:hover {
+    background: #248A3D;
+}
+
+.toggle-input:checked + .toggle-switch::after {
+    content: "Active ✓";
 }
 
 .toggle-slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #333333;
-    border: 1px solid #555555;
-    border-radius: 15px;
-    transition: 0.3s;
-}
-
-.toggle-slider:before {
-    position: absolute;
-    content: "";
-    height: 22px;
-    width: 22px;
-    left: 3px;
-    bottom: 3px;
-    background-color: #666666;
-    border-radius: 50%;
-    transition: 0.3s;
-}
-
-.toggle-input:checked + .toggle-slider {
-    background-color: #4CAF50;
-    border-color: #4CAF50;
-}
-
-.toggle-input:checked + .toggle-slider:before {
-    transform: translateX(30px);
-    background-color: #ffffff;
+    display: none; /* Remove the traditional slider since we're using a button style */
 }
 
 .status-section {
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 .status-indicator {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 12px;
-    background: #2a2a2a;
-    border: 1px solid #444444;
-    border-radius: 8px;
+    gap: 8px;
+    font-size: 12px;
+    color: #666666;
 }
 
 .status-dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background-color: #666666;
-    transition: 0.3s;
+    background-color: #999999;
+    transition: all 0.2s ease;
 }
 
 .status-dot.active {
-    background-color: #4CAF50;
+    background-color: #34C759;
 }
 
 .status-text {
-    font-size: 14px;
-    color: #cccccc;
-}
-
-.info-section {
-    flex: 1;
-    margin-bottom: 20px;
-}
-
-.info-card {
-    background: #2a2a2a;
-    border: 1px solid #444444;
-    border-radius: 8px;
-    padding: 20px;
-}
-
-.info-card h3 {
-    font-size: 14px;
-    margin-bottom: 15px;
-    color: #ffffff;
-}
-
-.info-card ul {
-    list-style: none;
-    padding: 0;
-}
-
-.info-card li {
     font-size: 12px;
-    color: #cccccc;
-    margin-bottom: 8px;
-    padding-left: 15px;
-    position: relative;
-    line-height: 1.4;
-}
-
-.info-card li:before {
-    content: "•";
-    color: #4CAF50;
-    position: absolute;
-    left: 0;
-}
-
-.footer {
-    text-align: center;
-    padding-top: 15px;
-    border-top: 1px solid #333333;
-}
-
-.footer p {
-    font-size: 10px;
     color: #666666;
-    margin-bottom: 5px;
-}
-
-.debug-info {
-    font-size: 9px !important;
-    color: #888888 !important;
-    font-style: italic;
-    margin-top: 8px !important;
-}
-
-/* Animation for toggle */
-.toggle-switch:hover .toggle-slider {
-    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
-}
-
-.toggle-input:checked + .toggle-slider:hover {
-    box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
 }

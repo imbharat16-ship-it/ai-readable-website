@@ -1,15 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "AI-Readable Website v2.0",
+  "name": "AI Readable website",
   "version": "2.0.0",
-  "description": "Transform any website into a clean, AI-readable format with intelligent table deduplication and enhanced readability",
+  "description": "Transform any website into a clean, AI-parseable format. Made by Bharat & Ishika and inspired by Parallel.ai.",
   "permissions": [
     "activeTab",
     "storage"
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "AI-Readable Website v2.0"
+    "default_title": "AI Readable website"
   },
   "content_scripts": [
     {
